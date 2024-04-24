@@ -48,7 +48,12 @@ public class SimulacaoBancaria {
   }
 
   public void sacar(double saque) {
-    saldo -= saque;
-    System.out.println("\n>>> Saque de " + saque + " realizado com sucesso. \n");
+
+    if (saque > saldo) {
+      System.out.println("\n>>> Saldo insuficiente.");
+    } else {
+      saldo -= saque;
+      System.out.println("\n>>> Saque de " + saque + " realizado com sucesso. \n");
+    }
   }
 }
